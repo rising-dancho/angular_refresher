@@ -1,0 +1,10 @@
+<h3>Users Component</h3>
+<!-- allowNewUser is simply a string, to tell angular that this is a variable: USE PROPERTY BINDING -->
+<!-- EVENT BINDING : is when you make actions (click) -->
+<button class="btn btn-primary" [disabled]="!allowNewUser" (click)="changeUserCreatedStatus()"> Add User</button>
+<p>button disabled: {{ !allowNewUser }}</p>
+<p>status: '{{userCreatedStatus}}'</p>
+
+<app-user></app-user>
+<app-user></app-user>
+<app-user></app-user>
