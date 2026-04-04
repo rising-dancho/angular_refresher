@@ -1,2 +1,2 @@
-
-<div>User with ID {{ userID }} is {{ getUserStatus() }} </div>
+<!-- ngStyle takes an object: key value pair -->
+<div>User with ID {{ userID }} is <span [ngStyle]="{'color': getColor()}">{{ getUserStatus() }}</span> </div>

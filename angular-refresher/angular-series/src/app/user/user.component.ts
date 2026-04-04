@@ -26,5 +26,12 @@ export class UserComponent {
         return this.userStatus;
     }
 
+    getColor() {
+        if (this.userStatus === 'Online') {
+            return '#00C950';
+        }
+        return '#FB2C36';
+    }
+
 
 }
