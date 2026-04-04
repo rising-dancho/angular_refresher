@@ -1,10 +1,22 @@
 <h3>Users Component</h3>
+<div class="my-2">
+    <label> User Name: </label>
+    <!-- how do we take the data to the ts code? through $event EVENT BINDING reserved word. "It listens to the native input event from the DOM" -->
+    <!-- []           - bind into a DOM element             ( [value] → sets the input value )                  -->
+    <!-- ()           - listen from a DOM element           ( (input) → updates your variable when user types ) -->
+    <!-- [(ngModel)]  - two-way binding (both directions)   -->
+
+    <!-- input means whenever a user types anything.. the input event will be fired -->
+    <input type="text" class="form-control" (input)="onUpdateUser($event)">
+    <p>{{userName}}</p>
+</div>
+
 <!-- allowNewUser is simply a string, to tell angular that this is a variable: USE PROPERTY BINDING -->
 <!-- EVENT BINDING : is when you make actions (click) -->
 <button class="btn btn-primary" [disabled]="!allowNewUser" (click)="changeUserCreatedStatus()"> Add User</button>
 <p>button disabled: {{ !allowNewUser }}</p>
 <p>status: '{{userCreatedStatus}}'</p>
 
+<!-- <app-user></app-user>
 <app-user></app-user>
-<app-user></app-user>
-<app-user></app-user>
+<app-user></app-user> -->

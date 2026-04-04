@@ -14,6 +14,9 @@ export class UsersComponent implements OnInit {
     // variable for EVENT BINDING : JAVASCRIPT
     userCreatedStatus = 'No User is Created';
 
+    // $EVENT BINDING: listening to events from a DOM element 
+    userName = '';
+
     // Constructor whenever this component is create this contructor will be executed
     constructor() {
         console.log(this.allowNewUser)
@@ -32,6 +35,16 @@ export class UsersComponent implements OnInit {
         setTimeout(() => {
             this.userCreatedStatus = 'No User is Created';
         }, 3000);
+    }
+
+    onUpdateUser(event: Event) {
+        // console.log(event)
+        // PROBLEM: event.target.value => angular wouldnt be able to tell or which DOM element is this even for?? 
+        // SOLUTION: 
+        // typecasting (event.target as HTMLInputElement).value or (<HTMLInputElement>event.target).value.
+        // wrapper () is part of the syntax for the typecasting
+        this.userName = (event.target as HTMLInputElement).value; // because we are referring to an input eleement HTMLInputElements
+        
     }
 
     ngOnInit(): void { }
