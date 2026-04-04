@@ -1,34 +1,44 @@
 <h3>Users Component</h3>
 <div class="my-2">
-    <label> User Name: </label>
-    <!-- how do we take the data to the ts code? through $event EVENT BINDING reserved word. "It listens to the native input event from the DOM" -->
-    <!-- []           - bind into a DOM element             ( [value] → sets the input value )                  -->
-    <!-- ()           - listen from a DOM element           ( (input) → updates your variable when user types ) -->
-    <!-- [(ngModel)]  - two-way binding (both directions)   -->
+  <label> User Name: </label>
+  <!-- how do we take the data to the ts code? through $event EVENT BINDING reserved word. "It listens to the native input event from the DOM" -->
+  <!-- []           - bind into a DOM element             ( [value] → sets the input value )                  -->
+  <!-- ()           - listen from a DOM element           ( (input) → updates your variable when user types ) -->
+  <!-- [(ngModel)]  - two-way binding (both directions)   -->
 
-    <!-- input means whenever a user types anything.. the input event will be fired -->
-    <!-- <input type="text" class="form-control" (input)="onUpdateUser($event)"> -->
+  <!-- input means whenever a user types anything.. the input event will be fired -->
+  <!-- <input type="text" class="form-control" (input)="onUpdateUser($event)"> -->
 
-    <!-- TWO WAY BINDING -->
-    <input type="text" class="form-control" [(ngModel)]="userName" />
-    <p>{{userName}}</p>
+  <!-- TWO WAY BINDING -->
+  <input type="text" class="form-control" [(ngModel)]="userName" />
+  <!-- <p>{{userName}}</p> -->
 </div>
 
 <!-- allowNewUser is simply a string, to tell angular that this is a variable: USE PROPERTY BINDING -->
 <!-- EVENT BINDING : is when you make actions (click) -->
 <button class="btn btn-primary" [disabled]="!allowNewUser" (click)="changeUserCreatedStatus()"> Add User</button>
-<p>button disabled: {{ !allowNewUser }}</p>
-<p>status: '{{userCreatedStatus}}'</p>
+<!-- <p>button disabled: {{ !allowNewUser }}</p> -->
+<!-- <p>status: '{{userCreatedStatus}}'</p> -->
 
-<!-- <app-user></app-user>
+<!-- STRUCTURAL DIRECTIVE: it changes the structure of the DOM element --> 
+<p *ngIf="isUserCreated; else noUser">User is created and the username is {{userName}}</p>
+
+<!-- local reference : marker or identifier #noUser -->
+<ng-template #noUser>
+  <p>
+    No User is Created
+  </p>
+</ng-template>
+
 <app-user></app-user>
-<app-user></app-user> -->
+<app-user></app-user>
+<app-user></app-user>
 
 
 <!-- [] PROPERTY BINDING -->
 <!-- () EVENT BINDING -->
 <!-- 
-TWO WAY BINDING REQUIRES : 
+TWO WAY DATA BINDING REQUIRES : 
 - import { FormsModule } from '@angular/forms'; 
 imports: [
     BrowserModule,

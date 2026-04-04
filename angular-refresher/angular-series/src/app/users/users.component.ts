@@ -17,6 +17,9 @@ export class UsersComponent implements OnInit {
     // $EVENT BINDING: listening to events from a DOM element 
     userName = '';
 
+    // boolean for user creation
+    isUserCreated = false;
+
     // Constructor whenever this component is create this contructor will be executed
     constructor() {
         console.log(this.allowNewUser)
@@ -26,16 +29,19 @@ export class UsersComponent implements OnInit {
             console.log(this.allowNewUser)
 
             return output;
-        }, 3000)
+        }, 2000)
     }
 
     // METHOD FOR EVENT BINDING:
     changeUserCreatedStatus() {
-        this.userCreatedStatus = 'User is Created';
+        // this[-=p].userCreatedStatus = 'User is Created';
+        this.isUserCreated = true;
         setTimeout(() => {
-            this.userCreatedStatus = 'No User is Created';
-        }, 3000);
+            this.isUserCreated = false;
+        }, 5000);
+        // this.userCreatedStatus = 'User is Created';
     }
+
 
     onUpdateUser(event: Event) {
         // console.log(event)
@@ -44,8 +50,10 @@ export class UsersComponent implements OnInit {
         // typecasting (event.target as HTMLInputElement).value or (<HTMLInputElement>event.target).value.
         // wrapper () is part of the syntax for the typecasting
         this.userName = (event.target as HTMLInputElement).value; // because we are referring to an input eleement HTMLInputElements
-        
+
     }
+
+
 
     ngOnInit(): void { }
 
