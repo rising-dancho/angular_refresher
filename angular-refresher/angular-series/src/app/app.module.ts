@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { UsersComponent } from './users/users.component';
+import { FormsModule } from '@angular/forms';
 
 // THIS IS THE ENTRY MODULE: has special decorator 'NgModule'
 @NgModule({
@@ -15,6 +16,7 @@ import { UsersComponent } from './users/users.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

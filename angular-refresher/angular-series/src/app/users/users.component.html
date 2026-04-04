@@ -7,7 +7,10 @@
     <!-- [(ngModel)]  - two-way binding (both directions)   -->
 
     <!-- input means whenever a user types anything.. the input event will be fired -->
-    <input type="text" class="form-control" (input)="onUpdateUser($event)">
+    <!-- <input type="text" class="form-control" (input)="onUpdateUser($event)"> -->
+
+    <!-- TWO WAY BINDING -->
+    <input type="text" class="form-control" [(ngModel)]="userName" />
     <p>{{userName}}</p>
 </div>
 
@@ -20,3 +23,17 @@
 <!-- <app-user></app-user>
 <app-user></app-user>
 <app-user></app-user> -->
+
+
+<!-- [] PROPERTY BINDING -->
+<!-- () EVENT BINDING -->
+<!-- 
+TWO WAY BINDING REQUIRES : 
+- import { FormsModule } from '@angular/forms'; 
+imports: [
+    BrowserModule,
+    FormsModule,
+  ], 
+  
+from the ngModule  
+-->
