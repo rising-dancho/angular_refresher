@@ -21,7 +21,7 @@
 <!-- <p>status: '{{userCreatedStatus}}'</p> -->
 
 <!-- STRUCTURAL DIRECTIVE: it changes the structure of the DOM element --> 
-<p *ngIf="isUserCreated; else noUser">New User is created! with username {{userName}}</p>
+<p *ngIf="isUserCreated; else noUser">New User is created! with username is {{userName}}</p>
 
 <!-- local reference : marker or identifier #noUser -->
 <ng-template #noUser>

@@ -1,2 +1,6 @@
 <!-- ngStyle takes an object: key value pair -->
-<div>User with ID {{ userID }} is <span [ngStyle]="{'color': getColor()}">{{ getUserStatus() }}</span> </div>
+<!-- ngClass : the key: class name, value: true/false -->
+
+<div class="my-2 px-2 py-1" [ngClass]="{online: userStatus === 'Online' ? true: false}">User with ID {{ userID }} is
+    <span [ngStyle]="{'color': getColor()}">{{ getUserStatus() }}</span>
+</div>

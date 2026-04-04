@@ -1,3 +1,8 @@
 h1 {
     color: red;
 }
+
+.online {
+    border: 2px solid #00C950;
+    border-radius: 8px;
+}
