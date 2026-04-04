@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 
 export class UsersComponent implements OnInit {
     // PROPERTY BINDING : CSS
-    allowNewUser = false; // this is a property and you want to bind it to the css property to dynamically control its value
+    allowNewUser = false; // this is a property and yo676u want to bind it to the css property to dynamically control its value
     //    console.log(this.allowNewUser)  // IMPORTANT: class body is only for declarations! if you want to run console.log() .. run it inside a method
 
     // variable for EVENT BINDING : JAVASCRIPT
