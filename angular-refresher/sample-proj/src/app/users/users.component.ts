@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersComponent implements OnInit {
   userName: string = '';
-  usersList = [''];
+  usersList: string[] = [];
 
   constructor() { }
 
