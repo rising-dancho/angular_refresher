@@ -9,7 +9,7 @@
   <!-- input means whenever a user types anything.. the input event will be fired -->
   <!-- <input type="text" class="form-control" (input)="onUpdateUser($event)"> -->
 
-  <!-- TWO WAY BINDING -->
+  <!-- TWO WAY DATA BINDING -->
   <input type="text" class="form-control" [(ngModel)]="userName" />
   <!-- <p>{{userName}}</p> -->
 </div>
@@ -20,7 +20,7 @@
 <!-- <p>button disabled: {{ !allowNewUser }}</p> -->
 <!-- <p>status: '{{userCreatedStatus}}'</p> -->
 
-<!-- STRUCTURAL DIRECTIVE: it changes the structure of the DOM element --> 
+<!-- STRUCTURAL DIRECTIVE: it changes the structure of the DOM element -->
 <p *ngIf="isUserCreated; else noUser">New User is created! with username is {{userName}}</p>
 
 <!-- local reference : marker or identifier #noUser -->
@@ -30,9 +30,8 @@
   </p>
 </ng-template>
 
-<app-user></app-user>
-<app-user></app-user>
-<app-user></app-user>
+<!-- STRUCTURAL DIRECTIVE: means its adding the DOM element -->
+<app-user *ngFor="let user of users"></app-user>
 
 
 <!-- [] PROPERTY BINDING -->

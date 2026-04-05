@@ -1,6 +1,8 @@
 <!-- ngStyle takes an object: key value pair -->
-<!-- ngClass : the key: class name, value: true/false -->
+<!-- ngClass : the key: class name, value: true/false 
+  - for the CLASS NAME: if it's 'background-color' you need to put single quotes or right it as CamelCase backgroundColor javascript style
+-->
 
-<div class="my-2 px-2 py-1" [ngClass]="{online: userStatus === 'Online' ? true: false}">User with ID {{ userID }} is
+<div class="my-2 px-2 py-1" [ngClass]="{online: userStatus === 'Online' ? true: false}">adfinem with id {{ userID }} is
     <span [ngStyle]="{'color': getColor()}">{{ getUserStatus() }}</span>
 </div>

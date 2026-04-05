@@ -12,13 +12,16 @@ export class UsersComponent implements OnInit {
     //    console.log(this.allowNewUser)  // IMPORTANT: class body is only for declarations! if you want to run console.log() .. run it inside a method
 
     // variable for EVENT BINDING : JAVASCRIPT
-    userCreatedStatus = 'No User is Created';
+    // userCreatedStatus = 'No User is Created';
 
     // $EVENT BINDING: listening to events from a DOM element 
     userName = '';
 
     // boolean for user creation
     isUserCreated = false;
+
+    // ngFor
+    users = [''];
 
     // Constructor whenever this component is create this contructor will be executed
     constructor() {
@@ -27,21 +30,20 @@ export class UsersComponent implements OnInit {
             // enable the button: by setting the disabled = false
             var output = this.allowNewUser = true
             console.log(this.allowNewUser)
-
             return output;
-        }, 2000)
+        }, 2000);
     }
 
     // METHOD FOR EVENT BINDING:
     changeUserCreatedStatus() {
-        // this[-=p].userCreatedStatus = 'User is Created';
         this.isUserCreated = true;
         setTimeout(() => {
             this.isUserCreated = false;
         }, 5000);
-        // this.userCreatedStatus = 'User is Created';
-    }
 
+        this.users.push(this.userName);
+        console.log('users:' + this.users);
+    }
 
     onUpdateUser(event: Event) {
         // console.log(event)
